@@ -88,10 +88,10 @@ let birdAT = 0
 let birdHP = 0
 let ratAT = 0
 let ratHP = 0
-let ChpEND = false
-let bossBeat = false
-let snakeVNM = false
 let birdPECK = false
+let snakeVNM = false
+let bossBeat = false
+let ChpEND = false
 let decision: string;
 let emHP: number;
 let emAT: number;
@@ -177,7 +177,7 @@ let player_explore = [
 ]
 // player_rand = ["Random","random","Rand","rand"]
 let my_sprite = sprites.create(assets.image`Yes`, SpriteKind.Player)
-my_sprite.setPosition(0, 0)
+my_sprite.setPosition(75, 60)
 let playerHP = 8
 let playerMaxHP = 8
 let playerAT = 2

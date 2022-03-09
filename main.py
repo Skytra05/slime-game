@@ -83,10 +83,10 @@ birdAT = 0
 birdHP = 0
 ratAT = 0
 ratHP = 0
-ChpEND = False
-bossBeat = False
-snakeVNM = False
 birdPECK = False
+snakeVNM = False
+bossBeat = False
+ChpEND = False
 # Player inputs:
 player_confirm = ["Yes", "yes", "Y", "y"]
 player_deny = ["No", "no", "N", "n"]
