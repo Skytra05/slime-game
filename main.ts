@@ -88,10 +88,10 @@ let birdAT = 0
 let birdHP = 0
 let ratAT = 0
 let ratHP = 0
-let ChpEND = false
-let bossBeat = false
-let snakeVNM = false
 let birdPECK = false
+let snakeVNM = false
+let bossBeat = false
+let ChpEND = false
 let decision: string;
 let emHP: number;
 let emAT: number;
@@ -232,8 +232,9 @@ while (ChpEnd1 == false && Chp1Skip == false) {
     // playerHP > 0 and
     // Leads to a bossfight which ends the game
     if (introDialogue == false) {
-        console.log(`You are a slime and have woken up in a small cave with little light and the sounds of creatures surronding you, lurking in the dark... 
-`)
+        console.log(`
+            You are a slime and have woken up in a small cave with little light and the sounds of creatures surronding you, lurking in the dark...
+        `)
         // Perhaps realate the XP system to gaining mass as a slime with float points (like 1.6 KG instead of just 1 XP)
         introDialogue = true
     }
@@ -338,8 +339,9 @@ while (ChpEnd1 == false && Chp1Skip == false) {
                         playerEND = true
                     }
                 } else {
-                    console.log(`Invalid input. Please try again...
-`)
+                    console.log(`
+                        Invalid input. Please try again...
+                    `)
                 }
             } else if (playerHP < 0) {
                 playerEND = true
@@ -433,30 +435,35 @@ while (ChpEnd1 == false && Chp1Skip == false) {
         // and XPLevelCap1 == False
         if (emWRD == "rat") {
             console.log(`
-You defeated the rat! You gained 3 XP!`)
+                You defeated the rat! You gained 3 XP!
+            `)
             XPTotal = XPTotal + 3
         } else if (emWRD == "bird") {
             console.log(`
-You defeated the bird! You gained 3 XP`)
+                You defeated the bird! You gained 3 XP
+            `)
             XPTotal = XPTotal + 3
         } else if (emWRD == "ant colony") {
             console.log("You absorbed the ant colony! You gained 2 XP!")
             XPTotal = XPTotal + 2
         } else if (emWRD == "snake") {
             console.log(`
-You defeated the snake! You gained 4 XP!`)
+                You defeated the snake! You gained 4 XP!
+            `)
             XPTotal = XPTotal + 4
         }
         pause(1200)
     }
     if (playerHP <= 0) {
         console.log(`
-The slime shriviled up and died!`)
+            The slime shriviled up and died!
+        `)
     }
     // After battle looting system / made simple text; can be expanded later.
     if (playerHP > 0) {
         console.log("" + `
-You survived your encounter with ` + emWRD + ", you now have free time wandering in the sewers. You may rest to heal, search for loot to gain mass (or XP).")
+            You survived your encounter with
+        ` + emWRD + ", you now have free time wandering in the sewers. You may rest to heal, search for loot to gain mass (or XP).")
         playerRestStop = "Rest"
         // input("Please make your choice: ")
         PRSE = false
@@ -513,13 +520,15 @@ console.log("You take a breather and healed " + ("" + playerHeal) + " health bac
                 // IDK WHY THIS BREAKS IT SHOULD WORK FINE!
                 playerLoot = randint(1, 7)
                 if (playerLoot != 7) {
-                    console.log(`You scavenged around and found enough food to gain + 1 XP
-`)
+                    console.log(`
+                        You scavenged around and found enough food to gain + 1 XP
+                    `)
                     XPTotal = XPTotal + 1
                     console.log("You have " + ("" + XPTotal) + " XP!\n\n")
                 } else if (playerLoot == 7) {
-                    console.log(`You were lucky and found good food! you gained + 2 XP!
-`)
+                    console.log(`
+                        You were lucky and found good food! you gained + 2 XP!
+                    `)
                     // Go into more depth in descriptions...
                     XPTotal = XPTotal + 2
                     console.log("You have " + ("" + XPTotal) + " XP!\n\n")
@@ -533,12 +542,12 @@ console.log("You take a breather and healed " + ("" + playerHeal) + " health bac
         pause(1000)
         PRSE = false
         if (Math.idiv(XPTotal, 10) == 1 && XPLevelUp1 == false) {
-            console.log(`You leveled up!
-New Stats:
-Attack: 2 --> 3
-HP: 8 --> 10
-
-`)
+            console.log(`
+                You leveled up!
+                New Stats:
+                Attack: 2 --> 3
+                HP: 8 --> 10
+            `)
             // Add an ability gain here
             playerAT = 3
             playerHP = 10
@@ -546,12 +555,12 @@ HP: 8 --> 10
             XPLevelUp1 = true
             pause(2500)
         } else if (Math.idiv(XPTotal, 10) == 2 && XPLevelUp2 == false) {
-            console.log(`You leveled up!
-New Stats:
-Attack: 3 --> 4
-HP: 10 --> 12
-
-`)
+            console.log(`
+                You leveled up!
+                New Stats:
+                Attack: 3 --> 4
+                HP: 10 --> 12
+            `)
             // Add an ability gain here
             playerAT = 4
             playerHP = 12
@@ -562,27 +571,30 @@ HP: 10 --> 12
         // Change where this time stop is located later
         // Post-Battle story moments
         if (battleCounter == 1) {
-            console.log("After the sudden fight with " + emWRD + `, you look around at your surrondings... 
-It is a dark tunnel with a putrid smell. 
-You look around and know that you need to escape whever this is...
-You begin by heading in a random direction.
-`)
+            console.log("After the sudden fight with " + emWRD + `
+                , you look around at your surrondings... 
+                It is a dark tunnel with a putrid smell. 
+                You look around and know that you need to escape whever this is...
+                You begin by heading in a random direction.
+            `)
         } else if (battleCounter == 3) {
-            console.log(`You begin to feel the layout of the place.
- The creatures here are constanly hungry and being a reflective slime, you do stand out amongst the darkness...
-
-`)
+            console.log(`
+                You begin to feel the layout of the place.
+                 The creatures here are constanly hungry and being a reflective slime, you do stand out amongst the darkness...
+            `)
             EggM1 = randint(1, 5)
             if (EggM1 == 1) {
                 pause(1500)
-                console.log(`You feel as if you are at a disadvantage going throughout this place...
-`)
+                console.log(`
+                    You feel as if you are at a disadvantage going throughout this place...
+                `)
             }
         } else if (battleCounter == 6) {
-            console.log(`You begin to feel stronger as you crawl through these tunnels...
-You don't know why you exist as an abomination to nature, but you do.
-You continue on with the hope of escape.
-`)
+            console.log(`
+                You begin to feel stronger as you crawl through these tunnels...
+                You don't know why you exist as an abomination to nature, but you do.
+                You continue on with the hope of escape.
+            `)
         } else if (battleCounter == 9) {
             console.log("You hear hushed calls from outside. You don't understand what they are saying or who or what they are, but you feel you are close to escaping this maze. You feel determined to keep pushing.")
             // Last sentence is extra?
